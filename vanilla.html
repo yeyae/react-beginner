@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <body></body>
+  <!--react 사용을 위한 src들-->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <!--react를 이해하기 위해 어려운 내용을 먼저 이해할 필요가 있음(그렇다고 이 코드를 작성할 필요는 X)-->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    //새로운 방식
+    const Title = (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello I'm a title
+      </h3>
+    );
+
+    //    const h3 = React.createElement(
+    //        "h3",
+    //        {
+    //            id: "title",
+    //            onMouseEnter: () => console.log("mouse enter"),
+    //        },
+    //        "Hello I'm a title"
+    //    )   ==>기존 코드(요소를 생성하는 오래된 방식)
+
+    //새로운 방식
+    const Button = (
+      <button
+        style={{
+          backgroundColor: "pink",
+        }}
+        onClick={() => console.log("im clicked")}
+      >
+        Click me
+      </button>
+    );
+
+    // const btn = React.createElement(
+    //     "button",
+    //     {
+    //         onClick : () => console.log("im clicked"),
+    //         style: {
+    //             backgroundColor : "pink",
+    //         },
+
+    //     },
+    //             "Click me"
+    // ); ==>기존 코드(요소를 생성하는 오래된 방식)
+
+    //Container의 c는 꼭 대문자로 적어주기
+    const Container = (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(container, root);
+
+    //state : 데이터가 저장되는 곳
+  </script>
+</html>
